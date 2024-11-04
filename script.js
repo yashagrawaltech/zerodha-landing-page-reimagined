@@ -166,17 +166,18 @@ function whyZerodhaBestAnimation() {
   if (window.innerWidth > 1000) {
     // console.log(container.offsetHeight);
     // console.log(wrapper.offsetHeight);
-
-    gsap.to(wrapper, {
-      y: -(wrapper.offsetHeight - container.offsetHeight),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".why-zerodha-best",
-        start: "top top",
-        end: "+=2000",
-        scrub: true,
-        pin: true,
-      },
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.to(wrapper, {
+        y: -(wrapper.offsetHeight - container.offsetHeight),
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".why-zerodha-best",
+          start: "top top",
+          end: "+=2000",
+          scrub: true,
+          pin: true,
+        },
+      });
     });
   }
 }
