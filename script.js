@@ -173,7 +173,7 @@ function whyZerodhaBestAnimation() {
         scrollTrigger: {
           trigger: ".why-zerodha-best",
           start: "top top",
-          end: "+=2000",
+          end: "bottom top",
           scrub: true,
           pin: true,
         },
