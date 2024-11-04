@@ -166,18 +166,16 @@ function whyZerodhaBestAnimation() {
   if (window.innerWidth > 1000) {
     // console.log(container.offsetHeight);
     // console.log(wrapper.offsetHeight);
-    document.addEventListener("DOMContentLoaded", () => {
-      gsap.to(wrapper, {
-        y: -(wrapper.offsetHeight - container.offsetHeight),
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".why-zerodha-best",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-          pin: true,
-        },
-      });
+    gsap.to(wrapper, {
+      y: -(wrapper.offsetHeight - container.offsetHeight),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".why-zerodha-best",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        pin: true,
+      },
     });
   }
 }
@@ -208,10 +206,13 @@ function zerodhaVarsityAnimation() {
   });
 }
 
-initLenis();
-navActions();
-heroAnimation();
-zerodhaUniverseAnimation();
-investInAnythingAnimation();
-whyZerodhaBestAnimation();
-zerodhaVarsityAnimation();
+document.addEventListener("DOMContentLoaded", () => {
+  initLenis();
+  navActions();
+  heroAnimation();
+  zerodhaUniverseAnimation();
+  investInAnythingAnimation();
+  whyZerodhaBestAnimation();
+  zerodhaVarsityAnimation();
+})
+
