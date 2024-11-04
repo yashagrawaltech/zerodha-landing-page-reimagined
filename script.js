@@ -172,7 +172,7 @@ function whyZerodhaBestAnimation() {
       scrollTrigger: {
         trigger: ".why-zerodha-best",
         start: "top top",
-        end: "bottom top",
+        end: "+=3000",
         scrub: true,
         pin: true,
       },
@@ -206,7 +206,7 @@ function zerodhaVarsityAnimation() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = function () {
   initLenis();
   navActions();
   heroAnimation();
@@ -214,5 +214,5 @@ document.addEventListener("DOMContentLoaded", () => {
   investInAnythingAnimation();
   whyZerodhaBestAnimation();
   zerodhaVarsityAnimation();
-})
+};
 
