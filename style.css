@@ -1,0 +1,1826 @@
+/* Fonts */
+
+/* "Sk-Modernist" */
+@font-face {
+  font-family: "Sk-Modernist";
+  src: url(./Sk-Modernist/Sk-Modernist-Regular.otf) format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sk-Modernist Bold";
+  src: url(./Sk-Modernist/Sk-Modernist-Bold.otf) format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sk-Modernist Mono";
+  src: url(./Sk-Modernist/Sk-Modernist-Mono.otf) format("opentype");
+  font-style: normal;
+}
+
+/* "Satoshi" */
+@font-face {
+  font-family: "Satoshi";
+  src: url(./Satoshi/Satoshi-Regular.otf) format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi Bold";
+  src: url(./Satoshi/Satoshi-Bold.otf) format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi Bold Italic";
+  src: url(./Satoshi/Satoshi-BoldItalic.otf) format("opentype");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi Black";
+  src: url(./Satoshi/Satoshi-Black.otf) format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi Black Italic";
+  src: url(./Satoshi/Satoshi-BlackItalic.otf) format("opentype");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi Italic";
+  src: url(./Satoshi/Satoshi-Italic.otf) format("opentype");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi Light";
+  src: url(./Satoshi/Satoshi-Light.otf) format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi Light Italic";
+  src: url(./Satoshi/Satoshi-LightItalic.otf) format("opentype");
+  font-style: italic;
+}
+@font-face {
+  font-family: "Satoshi Medium";
+  src: url(./Satoshi/Satoshi-Medium.otf) format("opentype");
+  font-style: normal;
+}
+@font-face {
+  font-family: "Satoshi Medium Italic";
+  src: url(./Satoshi/Satoshi-MediumItalic.otf) format("opentype");
+  font-style: italic;
+}
+
+/* Fonts End */
+
+/* Initial CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  background-color: #111;
+}
+
+.main {
+  position: relative;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.sec-heading {
+  font-size: 3vw;
+  text-transform: uppercase;
+  font-family: "Sk-Modernist";
+  letter-spacing: 0.4vw;
+  color: white;
+}
+
+/* Initial CSS End */
+
+/* Nav */
+
+.nav {
+  opacity: 0;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 2vw;
+  width: 88vw;
+  height: 4vw;
+  border-radius: 0.8vw;
+  background: rgba(56, 126, 209, 0.09);
+  box-shadow: 0px 0.2vw 0.2vw 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(0.9vw);
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2vw;
+}
+
+.nav > .left {
+  display: flex;
+  align-items: center;
+  gap: 2.5vw;
+}
+
+.nav > .left > a {
+  display: flex;
+}
+
+.nav > .left > a > .nav-logo {
+  height: 1.5vw;
+}
+
+.nav > .left > .menus {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.5vw;
+}
+
+.nav > .left > .menus > a {
+  display: inline-block;
+  color: #ffffff;
+  font-family: "Satoshi Light";
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 0.9vw;
+}
+
+.nav > .left > .menus > a:hover {
+  color: #ffffff80;
+}
+
+.nav > .right > i {
+  font-size: 2vw;
+  color: #387ed1;
+  display: flex;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .nav {
+    height: 14vw;
+    width: 96vw;
+  }
+
+  .nav > .left > a > .nav-logo {
+    height: 6vw;
+  }
+
+  .nav > .left > .menus {
+    display: none;
+  }
+
+  .nav > .right > i {
+    font-size: 8vw;
+  }
+}
+
+.nav-open {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+  width: 40vw;
+  height: 100vh;
+  border-radius: 0.8vw;
+  background: #11111185;
+  box-shadow: 0px 0.2vw 0.2vw 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(0.9vw);
+  z-index: 10;
+}
+
+.nav-open > i {
+  position: absolute;
+  cursor: pointer;
+  color: white;
+  right: 4vw;
+  top: 3vw;
+  font-size: 2.5vw;
+}
+
+.nav-open > .nav-open-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  font-family: "Sk-Modernist";
+}
+
+.nav-open > .nav-open-container > .part-1,
+.nav-open > .nav-open-container > .part-2 {
+  flex-shrink: 0;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 10vw 2vw;
+  gap: 2vw;
+  overflow-y: auto;
+  scrollbar-width: none;
+  border-right: 0.1vw solid #ffffff20;
+}
+
+.nav-open > .nav-open-container > .part-1 > .sec,
+.nav-open > .nav-open-container > .part-2 > .sec {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.nav-open > .nav-open-container > .part-1 > .sec > h4,
+.nav-open > .nav-open-container > .part-2 > .sec > h4 {
+  font-size: 2vw;
+  text-transform: uppercase;
+  margin-bottom: 0.1vw;
+  color: white;
+}
+
+.nav-open > .nav-open-container > .part-1 > .sec > a,
+.nav-open > .nav-open-container > .part-2 > .sec > a {
+  display: inline-block;
+  font-size: 1vw;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: white;
+}
+
+.nav-open > .nav-open-container > .part-1 > .sec > a:hover,
+.nav-open > .nav-open-container > .part-2 > .sec > a:hover {
+  color: #ffffff80;
+}
+
+.nav-open > .nav-open-container > .part-2 > .sec > h4 {
+  font-size: 1vw;
+}
+
+.nav-open > .nav-open-container > .part-2 > .sec > a {
+  font-size: 2vw;
+}
+
+.nav-open > .nav-open-container > .part-2 > a {
+  display: inline-block;
+  margin-top: 3vw;
+  font-size: 1.5vw;
+  text-decoration: none;
+  text-transform: capitalize;
+  color: white;
+}
+
+.nav-open > .nav-open-container > .part-2 > a:hover {
+  color: #ffffff80;
+}
+
+.nav-open > .nav-open-container > .part-2 > a > i {
+  margin-left: 0.5vw;
+}
+
+@media (max-width: 1200px) {
+  .nav-open {
+    width: 80vw;
+  }
+
+  .nav-open > i {
+    font-size: 8vw;
+  }
+
+  .nav-open > .nav-open-container {
+    background: #11111185;
+    overflow-y: auto;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .nav-open > .nav-open-container > .part-1,
+  .nav-open > .nav-open-container > .part-2 {
+    overflow: hidden;
+    width: 100%;
+    gap: 8vw;
+    padding: 5vw 4vw;
+    height: fit-content;
+    border-right: 0;
+  }
+
+  .nav-open > .nav-open-container > .part-1 {
+    padding: 10vw 4vw 5vw 4vw;
+    border-bottom: 0.1vw solid #ffffff20;
+  }
+
+  .nav-open > .nav-open-container > .part-1 > .sec,
+  .nav-open > .nav-open-container > .part-2 > .sec {
+    gap: 2vw;
+  }
+
+  .nav-open > .nav-open-container > .part-1 > .sec > h4,
+  .nav-open > .nav-open-container > .part-2 > .sec > h4 {
+    font-size: 6vw;
+  }
+
+  .nav-open > .nav-open-container > .part-1 > .sec > a,
+  .nav-open > .nav-open-container > .part-2 > .sec > a {
+    font-size: 4vw;
+  }
+
+  .nav-open > .nav-open-container > .part-2 > .sec > a {
+    font-size: 6vw;
+  }
+
+  .nav-open > .nav-open-container > .part-2 > .sec > h4 {
+    font-size: 4vw;
+    font-weight: normal;
+  }
+
+  .nav-open > .nav-open-container > .part-2 > a {
+    font-size: 4vw;
+  }
+}
+
+/* Nav End */
+
+/* Main */
+
+/* Hero */
+
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero > .background {
+  opacity: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero > .background > .circle {
+  flex-shrink: 0;
+  width: 50vw;
+  height: 50vw;
+  border-radius: 50%;
+  border: 0.15vw solid rgba(12, 125, 184, 0.5);
+}
+
+.hero > .background > .circle.circle2 {
+  background: linear-gradient(
+      225deg,
+      rgba(12, 125, 184, 0.55) 10.43%,
+      rgba(5, 24, 34, 0.05) 54.42%,
+      #0b3f5b 89.81%
+    ),
+    url(./images/hero-background.jpeg) lightgray 50% / cover no-repeat;
+
+  box-shadow: 0px 0.2vw 0.2vw 0px rgba(0, 0, 0, 0.25);
+  filter: blur(0.6vw);
+}
+
+.hero > .shadow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56vw;
+  height: 56vw;
+  border-radius: 50%;
+  background-color: rgba(12, 125, 184, 0.4);
+  filter: blur(8vw);
+  z-index: 0;
+}
+
+.hero > .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero > .text > .banner-1-text {
+  opacity: 0;
+}
+
+.hero > .text > h4 {
+  width: 40vw;
+  color: #fff;
+  text-align: center;
+  font-family: "Satoshi";
+  font-size: 1.6vw;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%;
+}
+
+.hero > .text > h1 {
+  margin-top: -0.2vw;
+  color: #fff;
+  text-align: center;
+  font-family: "Sk-Modernist";
+  font-size: 6vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 106%;
+  letter-spacing: -0.2vw;
+}
+
+.hero > .circle-link {
+  opacity: 0;
+  width: 8vw;
+  height: 8vw;
+  border: 0.1vw solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 3;
+}
+
+.hero > .circle-link > i {
+  font-size: 2vw;
+  color: white;
+}
+
+.hero > .circle-link.cen {
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero > .circle-link.lft {
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+.hero > .circle-link.rgt {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    height: 65svh;
+  }
+
+  .hero > .background > .circle {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .hero > .shadow {
+    width: 88vw;
+    height: 88vw;
+  }
+
+  .hero > .text > h4 {
+    width: 70vw;
+    font-size: 3.7vw;
+  }
+
+  .hero > .text > h1 {
+    font-size: 9.4vw;
+  }
+
+  .hero > .circle-link {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .hero > .circle-link > i {
+    font-size: 4vw;
+  }
+
+  .hero > .circle-link.lft {
+    left: -5%;
+  }
+  .hero > .circle-link.rgt {
+    right: -5%;
+  }
+}
+
+@media (min-width: 530px) {
+  .hero {
+    height: 100svh;
+  }
+}
+
+/* Hero End */
+
+/* Zerodha Universe */
+
+.zerodha-universe {
+  position: relative;
+  width: 100vw;
+}
+
+.zerodha-universe > .slides {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.zerodha-universe > .slides > .slide {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  background: url(./images/zerodha-slides-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.zerodha-universe > .slides::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: url(./images/zerodha-slides-overlay.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 5;
+}
+
+.zerodha-universe > .slides > .slide > .text {
+  position: absolute;
+  text-align: start;
+  text-transform: capitalize;
+  text-wrap: nowrap;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.zerodha-universe > .slides > .slide > img {
+  position: absolute;
+  object-fit: contain;
+}
+
+.zerodha-universe > .slides > .slide > .text > h4 {
+  font-size: 4vw;
+  font-family: "Satoshi";
+}
+
+.zerodha-universe > .slides > .slide > .text > h2 {
+  font-size: 4vw;
+  font-size: 8vw;
+  letter-spacing: -0.1vw;
+  margin-top: -1.5vw;
+  font-family: "Sk-Modernist";
+  color: #22c9ff;
+}
+
+.zerodha-universe > .slides > .slide.slide-1 > .text {
+  left: 4vw;
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: start;
+  color: white;
+}
+
+.zerodha-universe > .slides > .slide.slide-1 > img {
+  right: 4vw;
+  height: 100%;
+}
+
+.zerodha-universe > .slides > .slide.slide-2 > img {
+  width: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.zerodha-universe > .slides > .slide.slide-2 > .text {
+  left: 50%;
+  top: 6vw;
+  transform: translateX(-50%);
+  align-items: center;
+  color: white;
+}
+
+.zerodha-universe > .slides > .slide.slide-3 > img {
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.zerodha-universe > .slides > .slide.slide-3 > .text {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  color: white;
+}
+
+.zerodha-universe > .slides > .slide.slide-4 > img {
+  height: 100%;
+  right: 0;
+}
+
+.zerodha-universe > .slides > .slide.slide-4 > .text {
+  left: 4vw;
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: start;
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  .zerodha-universe .slides {
+    width: 100%;
+    position: relative;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: fit-content;
+  }
+
+  .zerodha-universe .slides > .slide {
+    height: 60vw;
+    width: 100%;
+    aspect-ratio: 16/9;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .zerodha-universe .slides > .slide.slide-2 > img {
+    width: 90%;
+  }
+
+  .zerodha-universe .slides::after {
+    display: none;
+  }
+}
+
+/* Zerodha Universe End */
+
+/* Unbeatable Pricing */
+
+.unbeatable-pricing {
+  position: relative;
+  width: 100%;
+}
+
+.unbeatable-pricing > .graph-img {
+  width: 100%;
+  opacity: 0.4;
+}
+
+.unbeatable-pricing > .text-loop {
+  width: 68vw;
+  overflow: hidden;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.unbeatable-pricing > .text-loop::before,
+.unbeatable-pricing > .text-loop::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 2vw;
+  z-index: 2;
+}
+
+.unbeatable-pricing > .text-loop::before {
+  left: 0;
+  background: linear-gradient(to left, rgba(17, 17, 17, 0), #111);
+}
+
+.unbeatable-pricing > .text-loop::after {
+  right: 0;
+  background: linear-gradient(to right, rgba(17, 17, 17, 0), #111);
+}
+
+.unbeatable-pricing > .text-loop > .text {
+  animation: text-loop 20s linear infinite;
+  display: inline-block;
+  gap: 2vw;
+  text-transform: uppercase;
+  line-height: 150%;
+  text-wrap: nowrap;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1vw;
+  font-family: "Satoshi";
+  font-weight: 400;
+  letter-spacing: 0.2vw;
+}
+
+.unbeatable-pricing > .text-loop:hover > .text {
+  animation-play-state: paused;
+}
+
+@keyframes text-loop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.unbeatable-pricing > h2 {
+  margin-top: 2vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  text-wrap: nowrap;
+  color: white;
+  z-index: 3;
+}
+
+.unbeatable-pricing > h2 span {
+  color: #ffd75b;
+}
+
+.unbeatable-pricing > .cards-container {
+  width: 100%;
+  margin-top: 4.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4vw;
+  flex-wrap: nowrap;
+}
+
+.unbeatable-pricing > .cards-container > .card {
+  flex-shrink: 0;
+  width: 20vw;
+  height: 20vw;
+  padding: 2vw;
+  border-radius: 1.5vw;
+  border: 1px solid #387ed1;
+  background: var(
+    --linear-blue,
+    linear-gradient(
+      225deg,
+      rgba(12, 125, 184, 0.55) 10.43%,
+      rgba(5, 24, 34, 0.05) 54.42%,
+      #0b3f5b 89.81%
+    )
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+  font-family: "Satoshi";
+}
+
+.unbeatable-pricing > .cards-container > .card > span {
+  color: #387ed1;
+  text-align: center;
+  font-size: 4vw;
+  font-weight: 500;
+  letter-spacing: 0.2vw;
+  text-transform: uppercase;
+}
+
+.unbeatable-pricing > .cards-container > .card > p {
+  color: #fff;
+  text-align: center;
+  font-size: 1.5vw;
+  font-weight: 500;
+  letter-spacing: 0.2vw;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+  .unbeatable-pricing > .text-loop {
+    width: 88vw;
+  }
+
+  .unbeatable-pricing > .text-loop > .text {
+    font-size: 4vw;
+  }
+
+  .unbeatable-pricing > h2 {
+    font-size: 6vw;
+  }
+
+  .unbeatable-pricing > .cards-container > .card {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  .unbeatable-pricing > .cards-container > .card > span {
+    font-size: 6vw;
+  }
+
+  .unbeatable-pricing > .cards-container > .card > p {
+    font-size: 3vw;
+  }
+}
+
+/* Unbeatable Pricing End */
+
+/* Invest In Anything */
+
+.invest-in-anything {
+  width: 100vw;
+  position: relative;
+  margin-top: 6vw;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6vw;
+  gap: 4.5vw;
+}
+
+.invest-in-anything > .shadow {
+  position: absolute;
+  top: 12vw;
+  left: 0;
+  width: 25vw;
+  height: 25vw;
+  border-radius: 25%;
+  background-color: #e8635860;
+  filter: blur(11vw);
+  z-index: 0;
+}
+
+.invest-in-anything > h2 {
+  margin-left: 16vw;
+  text-align: left;
+  z-index: 3;
+}
+
+.invest-in-anything > h2 > span {
+  color: #e86358;
+}
+
+.invest-in-anything > .grid {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 34vw;
+}
+
+.invest-in-anything > .grid > .part {
+  position: absolute;
+  overflow: hidden;
+  height: 100%;
+}
+
+.invest-in-anything > .grid > .part-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  left: 16vw;
+  height: 100%;
+  z-index: 1;
+}
+
+.invest-in-anything > .grid > .part-1 > .equity {
+  width: 24vw;
+  height: 14vw;
+  border-radius: 2vw 2vw 2vw 2vw;
+  background-color: #387ed1;
+  display: flex;
+  justify-content: center;
+  padding: 0px 2vw;
+  align-items: center;
+}
+
+.invest-in-anything > .grid > .part-1 > .equity > h3 {
+  color: #387ed1;
+  -webkit-text-stroke-width: 0.07vw;
+  -webkit-text-stroke-color: #fff;
+  font-family: "Sk-Modernist";
+  font-size: 3vw;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 96px */
+  letter-spacing: 0.4vw;
+  text-transform: uppercase;
+}
+
+.invest-in-anything > .grid > .part-1 > .derivatives {
+  width: 36vw;
+  height: 18vw;
+  border-radius: 2vw 2vw 0 2vw;
+  background: url(./images/derivatives-bg.jpg) lightgray 50% / cover no-repeat;
+  display: flex;
+  justify-content: start;
+  padding: 0px 2vw;
+  align-items: center;
+}
+
+.invest-in-anything > .grid > .part-1 > .derivatives > h3 {
+  color: #387ed1;
+  -webkit-text-stroke-width: 0.07vw;
+  -webkit-text-stroke-color: #000;
+  font-family: "Sk-Modernist";
+  font-size: 3.5vw;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 150%; /* 96px */
+  letter-spacing: 0.4vw;
+  text-transform: uppercase;
+}
+
+.invest-in-anything > .grid > .part-1 > .circle {
+  position: absolute;
+  width: 10vw;
+  height: 10vw;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -70%);
+  background-color: #387ed1;
+  border-radius: 50%;
+  border: 0.7vw solid #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.invest-in-anything > .grid > .part-1 > .circle i {
+  font-size: 3.5vw;
+  color: white;
+}
+
+.invest-in-anything > .grid > .part-2 {
+  width: 24vw;
+  height: 100%;
+  left: 55%;
+  transform: translateX(-45%);
+  background-color: #f1b357;
+  border-radius: 2vw;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.invest-in-anything > .grid > .part-2 > img {
+  margin-top: 2.5vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+.invest-in-anything > .grid > .part-3 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 2vw;
+  right: 16vw;
+  z-index: 1;
+  align-items: end;
+}
+
+.invest-in-anything > .grid > .part-3 > .mutual-funds {
+  position: relative;
+  width: 24vw;
+  height: 10vw;
+  border-radius: 2vw;
+  display: flex;
+  justify-content: center;
+  padding: 0 2vw;
+  align-items: center;
+  border: 0.4vw solid #fff;
+  background: rgba(241, 179, 87, 0.58);
+  backdrop-filter: blur(0.3vw);
+  overflow: hidden;
+}
+
+.invest-in-anything > .grid > .part-3 > .mutual-funds::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(./images/mutual-fund-bg.jpg) center / cover no-repeat;
+  opacity: 0.4; /* Adjust the opacity value as needed */
+  z-index: -1; /* Place it behind the content */
+}
+
+.invest-in-anything > .grid > .part-3 > .mutual-funds > h3 {
+  color: transparent;
+  -webkit-text-stroke-width: 0.07vw;
+  -webkit-text-stroke-color: #fff;
+  font-family: "Sk-Modernist";
+  font-size: 2vw;
+  font-style: normal;
+  text-wrap: nowrap;
+  font-weight: 800;
+  line-height: 150%; /* 96px */
+  letter-spacing: 0.4vw;
+  text-transform: uppercase;
+}
+
+.invest-in-anything > .grid > .part-3 > .and-more {
+  width: 12vw;
+  height: 20vw;
+  border-radius: 2vw 2vw 2vw 2vw;
+  background-color: #e86358;
+  display: flex;
+  justify-content: center;
+  padding: 0px 2vw;
+  align-items: center;
+}
+
+.invest-in-anything > .grid > .part-3 > .and-more > h3 {
+  color: transparent;
+  -webkit-text-stroke-width: 0.07vw;
+  -webkit-text-stroke-color: #fff;
+  font-family: "Sk-Modernist";
+  font-size: 2vw;
+  font-style: normal;
+  text-wrap: nowrap;
+  font-weight: 800;
+  line-height: 150%; /* 96px */
+  letter-spacing: 0.4vw;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+}
+
+@media (max-width: 1000px) {
+  .invest-in-anything {
+    margin-top: 12vw;
+    padding-top: 6vw;
+  }
+
+  .invest-in-anything > h2 {
+    font-size: 6vw;
+  }
+
+  .invest-in-anything > .shadow {
+    width: 80vw;
+    height: 80vw;
+    background-color: #e8635860;
+    filter: blur(14vw);
+  }
+
+  .invest-in-anything > .grid {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap: 4vw;
+    justify-content: start;
+    align-self: center;
+  }
+
+  .invest-in-anything > .grid > .part {
+    width: 100%;
+    position: relative;
+    height: fit-content;
+  }
+
+  .invest-in-anything > .grid > .part-1 {
+    left: auto;
+    gap: 4vw;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .invest-in-anything > .grid > .part-1 > .equity {
+    width: 88vw;
+    height: 50vw;
+    border-radius: 4vw;
+  }
+
+  .invest-in-anything > .grid > .part-1 > .equity > h3 {
+    font-size: 16vw;
+    -webkit-text-stroke-width: 0.6vw;
+  }
+
+  .invest-in-anything > .grid > .part-1 > .derivatives {
+    width: 88vw;
+    height: 50vw;
+    border-radius: 4vw;
+    justify-content: center;
+  }
+
+  .invest-in-anything > .grid > .part-1 > .derivatives > h3 {
+    font-size: 10vw;
+    -webkit-text-stroke-width: 0.6vw;
+  }
+
+  .invest-in-anything > .grid > .part-1 > .circle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32vw;
+    height: 32vw;
+  }
+
+  .invest-in-anything > .grid > .part-1 > .circle > i {
+    font-size: 16vw;
+  }
+
+  .invest-in-anything > .grid > .part-2 {
+    width: 88vw;
+    height: 120vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .invest-in-anything > .grid > .part-2 > img {
+    margin-top: 12vw;
+  }
+
+  .invest-in-anything > .grid > .part-3 {
+    width: 100%;
+    gap: 4vw;
+    right: auto;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .invest-in-anything > .grid > .part-3 > .mutual-funds {
+    width: 88vw;
+    height: 50vw;
+  }
+
+  .invest-in-anything > .grid > .part-3 > .mutual-funds > h3 {
+    font-size: 10vw;
+    -webkit-text-stroke-width: 0.6vw;
+  }
+
+  .invest-in-anything > .grid > .part-3 > .and-more {
+    width: 88vw;
+    height: 30vw;
+  }
+
+  .invest-in-anything > .grid > .part-3 > .and-more > h3 {
+    font-size: 6vw;
+    transform: rotate(0);
+    -webkit-text-stroke-width: 0.4vw;
+  }
+}
+
+/* Invest In Anything End */
+
+/* Why Zerodha is Best */
+
+.why-zerodha-best {
+  margin-top: 12vw;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  padding: 0 16vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.why-zerodha-best > .left {
+  flex-shrink: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  z-index: 1;
+}
+
+.why-zerodha-best > .left > h2 {
+  font-size: 6vw;
+}
+
+.why-zerodha-best > .left > h2 > span {
+  color: #f1b357;
+}
+
+.why-zerodha-best > .right {
+  flex-shrink: 0;
+  width: 50%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: start;
+  overflow: hidden;
+}
+
+.why-zerodha-best > .right > .wrapper {
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 3vw;
+  transform: translateY(0%);
+}
+
+.why-zerodha-best > .right > .wrapper > .card {
+  padding: 1vw;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+
+.why-zerodha-best > .right > .wrapper > .card > h3 {
+  margin-bottom: 1vw;
+  font-size: 2vw;
+  font-family: "Satoshi Bold";
+  color: #f1b357;
+}
+
+.why-zerodha-best > .right > .wrapper > .card > p {
+  font-size: 1.5vw;
+  font-family: "Sk-Modernist";
+  color: white;
+  font-weight: 100;
+}
+
+@media (max-width: 1000px) {
+  .why-zerodha-best {
+    margin-top: 20vw;
+    flex-direction: column;
+    height: fit-content;
+    gap: 4.5vw;
+    padding: 0 6vw;
+  }
+
+  .why-zerodha-best > .left {
+    padding-left: 12vw;
+  }
+
+  .why-zerodha-best > .left,
+  .why-zerodha-best > .right {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .why-zerodha-best > .right > .wrapper {
+    position: relative;
+    transform: translateY(0%);
+  }
+
+  .why-zerodha-best > .right > .wrapper > .card {
+    padding: 1vw;
+    text-transform: capitalize;
+    flex-shrink: 0;
+  }
+
+  .why-zerodha-best > .right > .wrapper > .card > h3 {
+    margin-bottom: 1vw;
+    font-size: 6vw;
+    font-family: "Satoshi Bold";
+    color: #f1b357;
+  }
+
+  .why-zerodha-best > .right > .wrapper > .card > p {
+    font-size: 4vw;
+    font-family: "Sk-Modernist";
+    color: white;
+  }
+}
+
+/* Why Zerodha is Best End */
+
+/* Zerodha Varsity */
+
+.zerodha-varsity {
+  width: 100vw;
+  margin-top: 6vw;
+  position: relative;
+}
+
+.zerodha-varsity > .wrapper {
+  width: 100%;
+  padding-top: 6vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 4.5vw;
+}
+
+.zerodha-varsity > .wrapper > h2 {
+  margin-right: 16vw;
+  text-align: right;
+  color: white;
+  z-index: 1;
+}
+
+.zerodha-varsity > .wrapper > h2 > span {
+  color: #22c9ff;
+}
+
+.zerodha-varsity > .shadow {
+  position: absolute;
+  top: 6vw;
+  right: 0;
+  border-radius: 50%;
+  background-color: rgba(12, 125, 184, 0.4);
+  filter: blur(11vw);
+  width: 25vw;
+  height: 25vw;
+  z-index: 0;
+}
+
+.zerodha-varsity > .wrapper > .rows {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.zerodha-varsity > .wrapper > .rows > .rows-content {
+  width: 68vw;
+  margin-left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.zerodha-varsity > .wrapper > .rows > .rows-content > .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw;
+  border-top: 0.1vw solid #ffffff60;
+  position: relative;
+}
+
+.zerodha-varsity > .wrapper > .rows > .rows-content > .row:last-child {
+  border-bottom: 0.1vw solid #ffffff60;
+}
+
+.zerodha-varsity > .wrapper > .rows > .rows-content > .row > h4,
+.zerodha-varsity > .wrapper > .rows > .rows-content > .row > i {
+  font-size: 2vw;
+  color: #ffffff60;
+  font-family: "Satoshi";
+  font-weight: 100;
+  letter-spacing: 0.4vw;
+  text-transform: uppercase;
+}
+
+.zerodha-varsity > .wrapper > .rows > .rows-content > .row:hover {
+  border-top: 0.1vw solid #ffffff;
+}
+
+.zerodha-varsity > .wrapper > .rows > .rows-content > .row:hover > h4,
+.zerodha-varsity > .wrapper > .rows > .rows-content > .row:hover > i {
+  font-weight: 500;
+  color: #fff;
+}
+
+.zerodha-varsity > .wrapper > .rows > .rows-content > .row > .phone-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zerodha-varsity > .wrapper > .rows > .rows-content > .row > .phone-img > img {
+  height: 24vw;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: center;
+  transform: rotate(30deg);
+  z-index: 1;
+}
+
+.zerodha-varsity > .wrapper > .bg-img {
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  z-index: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zerodha-varsity > .wrapper > .bg-img > img {
+  height: 100%;
+  opacity: 0.1;
+}
+
+@media (max-width: 1000px) {
+  .zerodha-varsity > .wrapper {
+    margin-top: 12vw;
+    padding-top: 6vw;
+    padding-bottom: 6vw;
+  }
+
+  .zerodha-varsity > .wrapper > h2 {
+    font-size: 6vw;
+  }
+
+  .zerodha-varsity > .wrapper > .rows > .rows-content {
+    width: 88vw;
+  }
+
+  .zerodha-varsity > .wrapper > .rows > .rows-content > .row > h4,
+  .zerodha-varsity > .wrapper > .rows > .rows-content > .row > i {
+    font-size: 6vw;
+  }
+
+  .zerodha-varsity > .shadow {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .zerodha-varsity > .wrapper > .bg-img {
+    height: 90vw;
+    bottom: -4vw;
+  }
+
+  .zerodha-varsity
+    > .wrapper
+    > .rows
+    > .rows-content
+    > .row
+    > .phone-img
+    > img {
+    height: 60vw;
+  }
+}
+
+/* Zerodha Varsity End */
+
+/* Footer */
+
+.footer {
+  position: relative;
+  width: 100%;
+  background-color: #111;
+  margin-top: 6vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 1vw;
+  z-index: 0;
+}
+
+.footer::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  z-index: 0;
+  background: var(
+    --linear-blue,
+    linear-gradient(
+      225deg,
+      rgba(12, 125, 184, 0.55) 10.43%,
+      rgba(5, 24, 34, 0.05) 54.42%,
+      #0b3f5b 89.81%
+    )
+  );
+}
+
+.footer > .part {
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2vw;
+  align-items: center;
+  color: white;
+  border-top: 0.03vw solid #ffffff20;
+  border-bottom: 0.03vw solid #ffffff20;
+  z-index: 1;
+}
+
+.footer > .part-1 {
+  margin-top: 4vw;
+  padding: 2vw 8.5vw;
+}
+
+.footer > .part-1 > h2 {
+  font-size: 3vw;
+  font-family: "Sk-Modernist";
+  letter-spacing: 0.2vw;
+  text-transform: uppercase;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.footer > .part-1 > .p1-2 {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.footer > .part-1 > .p1-2 > i {
+  font-size: 1vw;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer > .part-1 > .p1-2 > .p1-2-1 {
+  display: flex;
+  gap: 2vw;
+  font-family: "Satoshi Light";
+  line-height: 150%;
+  font-size: 1vw;
+  text-transform: capitalize;
+  letter-spacing: 0.04vw;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer > .part-1 > .p1-2 > .p1-2-2 {
+  width: 24vw;
+  font-family: "Satoshi Light";
+  line-height: 150%;
+  font-size: 1vw;
+  text-transform: capitalize;
+  letter-spacing: 0.04vw;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer > .part-1 > .p1-2 > .p1-2-3 {
+  width: 24vw;
+  font-family: "Satoshi Light";
+  line-height: 150%;
+  font-size: 1vw;
+  text-transform: capitalize;
+  letter-spacing: 0.04vw;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer > .part-2 {
+  padding: 2vw 0vw;
+}
+
+.footer > .part-2 > .p2-imgs {
+  width: 100%;
+  height: 16vw;
+  display: flex;
+  justify-content: end;
+  gap: 2vw;
+  align-items: center;
+  animation: scroll-right 50s linear infinite;
+}
+
+.footer > .part-2 > .p2-imgs > img {
+  height: 100%;
+  background-color: blue;
+  border-radius: 1vw;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+.footer > .part-2 > .p2-text-loop {
+  width: 100%;
+  background-color: #387ed140;
+  height: 3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.footer > .part-2 > .p2-text-loop > .text {
+  animation: scroll-left 20s linear infinite;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  flex-direction: row;
+  gap: 1vw;
+  color: white;
+  font-size: 1.8vw;
+  align-items: center;
+}
+
+.footer > .part-2 > .p2-text-loop > .text h4 {
+  font-family: "Satoshi Light";
+  text-align: start;
+  width: fit-content;
+  font-weight: normal;
+  font-size: 1.5vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+.footer > .part-3 {
+  width: 100%;
+  padding: 2vw 4vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer > .part-3 > .p3-1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 4vw;
+}
+
+.footer > .part-3 > .p3-1 > h3 {
+  width: 20vw;
+  font-size: 3vw;
+  text-align: left;
+  text-transform: uppercase;
+  font-family: "Sk-Modernist";
+  letter-spacing: 0.4vw;
+}
+
+.footer > .part-3 > .p3-1 > .p3-1-contact-info {
+  font-family: "Sk-Modernist";
+  line-height: 150%;
+  font-size: 1vw;
+  width: 12vw;
+}
+
+.footer > .part-3 > .p3-1 > .p3-1-address {
+  font-family: "Sk-Modernist";
+  line-height: 150%;
+  font-size: 1vw;
+  width: 24vw;
+}
+
+.footer > .part-3 > .p3-2 {
+  border-top: 0.03vw solid #ffffff20;
+  width: 100%;
+  height: 5vw;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8vw;
+  font-family: "Sk-Modernist";
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 0.06vw;
+  align-items: center;
+}
+
+.footer > .part-3 > .p3-2 > ul {
+  display: flex;
+  gap: 2vw;
+  list-style: none;
+  margin-right: 5.3vw;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    margin-top: 12vw;
+  }
+
+  .footer > .part {
+    border-top: 0.2vw solid #ffffff20;
+    border-bottom: 0.2vw solid #ffffff20;
+  }
+
+  .footer > .part-1 > h2 {
+    font-size: 8vw;
+    text-align: left;
+    white-space: wrap;
+  }
+
+  .footer > .part-1 > .p1-2 {
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+    gap: 4vw;
+  }
+
+  .footer > .part-1 > .p1-2 > .p1-2-1,
+  .footer > .part-1 > .p1-2 > .p1-2-2,
+  .footer > .part-1 > .p1-2 > .p1-2-3 {
+    font-family: "Satoshi Light";
+    flex-direction: column;
+    width: 100%;
+    line-height: 150%;
+    font-size: 4vw;
+    text-transform: capitalize;
+    letter-spacing: 0.04vw;
+    font-weight: normal;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .footer > .part-1 > .p1-2 > .p1-2-1 {
+    justify-self: start;
+    gap: 0vw;
+  }
+
+  .footer > .part-1 > .p1-2 > i {
+    transform: rotate(90deg);
+  }
+
+  .footer > .part-2 > .p2-imgs {
+    height: 40vw;
+    animation: scroll-right 10s linear infinite;
+  }
+
+  .footer > .part-2 > .p2-text-loop {
+    height: 6vw;
+  }
+
+  .footer > .part-2 > .p2-text-loop > .text > h4 {
+    font-size: 3vw;
+  }
+
+  .footer > .part-2 > .p2-text-loop > .text {
+    animation: scroll-left 10s linear infinite;
+  }
+
+  .footer > .part-3 > .p3-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 4vw;
+  }
+
+  .footer > .part-3 {
+    padding: 2vw 8.2vw;
+  }
+
+  .footer > .part-3 > .p3-1 > h3 {
+    font-size: 8vw;
+    width: 50vw;
+  }
+
+  .footer > .part-3 > .p3-1 > .p3-1-contact-info {
+    font-size: 3vw;
+    width: 100%;
+  }
+
+  .footer > .part-3 > .p3-1 > .p3-1-address {
+    font-size: 3vw;
+    width: 100%;
+  }
+
+  .footer > .part-3 > .p3-2 {
+    border-top: 0.2vw solid #ffffff20;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vw;
+    font-size: 3vw;
+    height: 16vw;
+    color: #ffffff60;
+  }
+}
+
+/* Footer End */
+
+/* Main End */
